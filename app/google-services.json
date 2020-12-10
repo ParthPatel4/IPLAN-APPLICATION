@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "306689674059",
+    "firebase_url": "https://iplan-application.firebaseio.com",
+    "project_id": "iplan-application",
+    "storage_bucket": "iplan-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306689674059:android:4bb321e020ffdf467176ce",
+        "android_client_info": {
+          "package_name": "com.example.iplanapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306689674059-p52ugubs9p96vefc14hutb0oivojqj1g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALMiQKEknQv0CsdnUemglNh-svap27aVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306689674059-p52ugubs9p96vefc14hutb0oivojqj1g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
