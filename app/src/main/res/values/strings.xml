@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">IPlan Application</string>
+
+    <string-array name="expense_type_array">
+        <item>Rent or Mortgage</item>
+        <item>Home Insurance</item>
+        <item>Vehicle Insurance</item>
+        <item>Vehicle Lease</item>
+        <item>Groceries</item>
+        <item>Other</item>
+    </string-array>
+</resources>
