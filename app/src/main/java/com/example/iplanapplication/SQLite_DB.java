@@ -13,6 +13,7 @@ ______________________________________________________
 |________|________|__________|________|______________|
 
  */
+import java.lang.*;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -128,13 +129,13 @@ public class SQLite_DB extends SQLiteOpenHelper {
             System.out.println("NEW ROW NOT ADDED IN USERS. SQLITEDB LINE 124 "+rowInserted);
 
         db.close();
-
         //getting all users in the db and printing in console to verify
         getAllUsers();
     }
+
     //Writing infromation to the Income table
     //This method is invoked whenever the save button on the income page is pressed
-    public void writeIncomeToDB(String username,String name, String amount, String date, String recurrence){
+    public void writeIncomeToDB(String username,String name, String amount, String date){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
@@ -142,7 +143,7 @@ public class SQLite_DB extends SQLiteOpenHelper {
         values.put(INC_NAME, name);
         values.put(INC_AMOUNT, amount);
         values.put(INC_DATE,date);
-        values.put(INC_RECURRENCE,recurrence);
+       // values.put(INC_RECURRENCE,recurrence);
 
         // Inserting Row
         long rowInserted=db.insert(INC_TABLE, null, values);
@@ -155,9 +156,10 @@ public class SQLite_DB extends SQLiteOpenHelper {
 
         db.close(); // Closing database connection
     }
+
     //Saving information to the Expense table
     //This method runs whenever the save button on the expense page is pressed
-    public void writeExpenseToDB(String username,String name,String amount, String date, String category, String recurrence){
+    public void writeExpenseToDB(String username,String name,String amount, String date, String category){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(EXP_TYPE, category);
@@ -165,7 +167,7 @@ public class SQLite_DB extends SQLiteOpenHelper {
         values.put(EXP_NAME, name);
         values.put(EXP_AMOUNT, amount);
         values.put(EXP_DATE,date);
-        values.put(EXP_RECURRENCE,recurrence);
+      //  values.put(EXP_RECURRENCE,recurrence);
 
         // Inserting Row
         long rowInserted=db.insert(EXP_TABLE, null, values);
@@ -268,33 +270,62 @@ public class SQLite_DB extends SQLiteOpenHelper {
         }
         return IncomeTableContents;
     }
-    void WriteTotalIncome(String username){
 
-    }
-    void WriteTotalExpense(String username){
 
+
+    /* ******these methods gets the total of income and expense the user inputs, respectivley***** */
+    public int GetTotalIncome(String username){
+        //this list has the amount of each income from the current user
+        List Income_amounts=getIncomeByUser(username);
+        int total=0;
+        total=Integer.parseInt(Income_amounts.get(4).toString());
+        for (int i=4; i<Income_amounts.size(); i+=6){
+            total += Integer.parseInt(Income_amounts.get(i).toString());
+        }
+        return total;
     }
+    public int GetTotalExpense(String username){
+        List Expense_amounts=getExpenseByUser(username);
+        int total=0;
+        total=Integer.parseInt(Expense_amounts.get(5).toString());
+        for (int i=5; i<Expense_amounts.size(); i+=7){
+            total += Integer.parseInt(Expense_amounts.get(i).toString());
+        }
+        return total;
+    }
+    public int difference(int one, int bottom){
+        return 100*(one/bottom);
+    }
+
+
+
+
+
+
+
+    //after total income is put into the user table, this method will retrieve it
     public int getTotalUserIncome(String username){
         int totalIncome=0;
-        System.out.println("You are in getTotalUserIncome By User in SQLITEDB LINE 271");
+        System.out.println("You are in getTotalUserIncome By User in SQLITEDB LINE 300");
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT "+TOTAL_INCOME+ " FROM " + USER_TABLE+" WHERE "+USERNAME+"=?",new String[]{username});
         totalIncome=cursor.getInt(1);
         return totalIncome;
     }
+    //after the total expense is put into the user table, this method wil; retrieve it
     public int getTotalUserExpense(String username){
         int totalExpense=0;
-        System.out.println("You are in getotalUserExpense By User in SQLITEDB LINE 271");
+        System.out.println("You are in getotalUserExpense By User in SQLITEDB LINE 309");
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT "+TOTAL_EXPENSE+ " FROM " + USER_TABLE+" WHERE "+USERNAME+"=?",new String[]{username});
         totalExpense=cursor.getInt(0);
         return totalExpense;
     }
     public List getExpenseByUser(String Username){
-        System.out.println("You are in getExpense By User in SQLITEDB LINE 271");
+        System.out.println("You are in getExpense By User in SQLITEDB LINE 316");
         SQLiteDatabase db = this.getWritableDatabase();
         List UserExpenses = new ArrayList();
-        System.out.println("You are in getExpense By User in SQLITEDB LINE 271");
+        System.out.println("You are in getExpense By User in SQLITEDB LINE 319");
         Cursor cursor = db.rawQuery("SELECT * FROM " + EXP_TABLE+" WHERE "+USERNAME+"=?",new String[]{Username});
         if(cursor.moveToFirst()){
             do{
@@ -313,23 +344,24 @@ public class SQLite_DB extends SQLiteOpenHelper {
     }
 
     public List getIncomeByUser(String Username){
-        System.out.println("You are in getIncome By User in SQLITEDB LINE 271");
+        System.out.println("You are in getIncome By User in SQLITEDB LINE 228");
         SQLiteDatabase db = this.getWritableDatabase();
         List UserIncome = new ArrayList();
-        System.out.println("You are in getIncome By User in SQLITEDB LINE 271");
+        System.out.println("You are in getIncome By User in SQLITEDB LINE 341");
         Cursor cursor = db.rawQuery("SELECT * FROM " + INC_TABLE+" WHERE "+USERNAME+"=?",new String[]{Username});
         if(cursor.moveToFirst()){
             do{
                 int user_ID=cursor.getInt(0); String user_name=cursor.getString(1);
                 String income_type=cursor.getString(2); String income_name=cursor.getString(3);
                 String income_date=cursor.getString(4);int income_amount=cursor.getInt(5);
-                String income_recurrence=cursor.getString(6);
-                System.out.println(user_ID+"  "+user_name+"  "+income_type+"  "+income_name+"   "+income_date+"  "+income_amount+"  "+income_recurrence);
+               // String income_recurrence=cursor.getString(6);
+                System.out.println(user_ID+"  "+user_name+"  "+income_type+"  "+income_name+"   "+income_date+"  "+income_amount+"  ");
                 UserIncome.add(user_ID);UserIncome.add(user_name);UserIncome.add(income_type);UserIncome.add(income_name);UserIncome.add(income_date);
-                UserIncome.add(income_amount);UserIncome.add(income_recurrence);
+                UserIncome.add(income_amount);
             }
             while(cursor.moveToNext());
         }
+        System.out.println(Arrays.toString(UserIncome.toArray()));
         return UserIncome;
     }
 

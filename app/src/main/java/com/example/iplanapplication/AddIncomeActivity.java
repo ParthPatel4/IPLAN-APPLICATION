@@ -57,6 +57,9 @@ public class AddIncomeActivity extends AppCompatActivity {
             income_amount=findViewById(R.id.income_amount);
             save_btn=(Button)findViewById(R.id.income_save);
             income_date=(DatePicker)findViewById(R.id.income_date);
+
+
+           // recur=findViewById(R.id.expense_recurrence);
             //Spinner mySpinner = (Spinner) findViewById(R.id.income_menu);
 
 
@@ -83,15 +86,16 @@ public class AddIncomeActivity extends AppCompatActivity {
                         String incomeAmount=income_amount.getText().toString().trim();
                         System.out.println(incomeName+"  "+incomeAmount+"  "+"  "+dateString);
 
-                        recur=findViewById(R.id.expense_recurrence);
+
+                        /*
                         if(recur.isChecked()){
                             inc_recurr="true";
                         } else{
                             inc_recurr="false";
                         }
+*/
 
-
-                        db.writeIncomeToDB(User, incomeName, incomeAmount,dateString,String.valueOf(inc_recurr));
+                        db.writeIncomeToDB(User, incomeName, incomeAmount,dateString);
 
 
                     }
