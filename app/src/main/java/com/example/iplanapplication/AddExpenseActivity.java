@@ -75,14 +75,14 @@ public class AddExpenseActivity extends AppCompatActivity {
                         if(!x){
                             System.out.println("expense activity line 81 reached");*/
 
-                        if(recur.isChecked()){
+                       /* if(recur.isChecked()){
                             expense_recurr="true";
                         } else{
                             expense_recurr="false";
                         }
+*/
 
-
-                        db.writeExpenseToDB(User, expenseName,expenseAmount,dateString,expense_menu_ans, String.valueOf(expense_recurr));
+                        db.writeExpenseToDB(User, expenseName,expenseAmount,dateString,expense_menu_ans);
 
 
 

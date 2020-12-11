@@ -3,102 +3,258 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".DashboardActivity" >
+    android:scrollbars="vertical"
+    tools:context=".DashboardActivity">
 
 
+
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginRight="19dp"
-        android:layout_marginBottom="15dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"><![CDATA[
 
+
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ]]>
 
         <TextView
-            android:id="@+id/RemainingToSpend"
-            android:layout_width="wrap_content"
-            android:layout_height="39dp"
+            android:id="@+id/textView4"
+            android:layout_width="106dp"
+            android:layout_height="36dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="181dp"
-            android:layout_marginLeft="181dp"
-            android:layout_marginTop="151dp"
-            android:layout_marginEnd="27dp"
-            android:layout_marginRight="27dp"
-            android:layout_marginBottom="506dp"
-            android:ems="10"
-            android:text="Remaining to Spend" />
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="423dp"
+            android:layout_marginEnd="417dp"
+            android:layout_marginRight="417dp"
+            android:layout_marginBottom="385dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:scrollbarAlwaysDrawVerticalTrack="false"
+            android:text="Expense"
+            android:textSize="24sp" />
 
-        <com.github.lzyzsd.circleprogress.CircleProgress
-            android:id="@+id/circle_progress"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="106dp"
+            android:layout_height="36dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="206dp"
-            android:layout_marginRight="206dp"
-            android:layout_marginBottom="522dp" />
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="281dp"
+            android:layout_marginEnd="421dp"
+            android:layout_marginRight="421dp"
+            android:layout_marginBottom="385dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:scrollbarAlwaysDrawVerticalTrack="false"
+            android:text="Income"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/NetDisposableIncome"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="213dp"
+            android:layout_height="42dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="176dp"
-            android:layout_marginLeft="176dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="642dp"
+            android:layout_marginStart="316dp"
+            android:layout_marginLeft="316dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginBottom="419dp"
             android:ems="10"
             android:text="Net disposable income" />
 
+        <com.github.lzyzsd.circleprogress.CircleProgress
+            android:id="@+id/circle_progress"
+            android:layout_width="238dp"
+            android:layout_height="204dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="57dp"
+            android:layout_marginEnd="304dp"
+            android:layout_marginRight="304dp"
+            android:layout_marginBottom="468dp"
+            android:background="#FFFFFF" />
+
         <TextView
-            android:id="@+id/TotalExpenditure"
-            android:layout_width="wrap_content"
+            android:id="@+id/netDisposableIncome"
+            android:layout_width="209dp"
             android:layout_height="38dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="174dp"
-            android:layout_marginLeft="174dp"
-            android:layout_marginTop="75dp"
-            android:layout_marginEnd="34dp"
-            android:layout_marginRight="34dp"
-            android:layout_marginBottom="583dp"
+            android:layout_marginStart="320dp"
+            android:layout_marginLeft="320dp"
+            android:layout_marginTop="172dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginBottom="419dp"
             android:ems="10"
             android:text="Total Expenditure" />
 
+        <TextView
+            android:id="@+id/total_income"
+            android:layout_width="203dp"
+            android:layout_height="40dp"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="317dp"
+            android:layout_marginLeft="317dp"
+            android:layout_marginTop="113dp"
+            android:layout_marginEnd="27dp"
+            android:layout_marginRight="27dp"
+            android:layout_marginBottom="419dp"
+            android:ems="10"
+            android:text="$0.00"
+            android:textColor="#0671AC"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/total_expense"
+            android:layout_width="199dp"
+            android:layout_height="42dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="319dp"
+            android:layout_marginLeft="319dp"
+            android:layout_marginTop="225dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginRight="29dp"
+            android:layout_marginBottom="419dp"
+            android:ems="10"
+            android:text="$0.00"
+            android:textColor="#0671ac"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/TotalExpenditure"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="72dp"
+            android:layout_marginLeft="72dp"
+            android:layout_marginTop="181dp"
+            android:layout_marginEnd="271dp"
+            android:layout_marginRight="271dp"
+            android:layout_marginBottom="419dp"
+            android:ems="10"
+            android:text="of income spent"
+            android:textColor="#FFFFFF" />
+
+        <View
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="366dp"
+        android:layout_marginBottom="359dp"
+        android:background="@android:color/darker_gray" />
+
+        <ListView
+            android:id="@+id/expense_list"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="479dp"
+            android:layout_marginEnd="143dp"
+            android:layout_marginRight="143dp"
+            android:layout_marginBottom="297dp"></ListView>
+
+        <ListView
+            android:id="@+id/income_list"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="338dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="171dp">
+
+        </ListView>
+
+        <CalendarView
+            android:id="@+id/calendarView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="570dp"
+            android:layout_marginEnd="99dp"
+            android:layout_marginRight="99dp" />
+
 
     </RelativeLayout>
-
-
+</ScrollView>
 </RelativeLayout>
+
+
+
+
+
+
+
