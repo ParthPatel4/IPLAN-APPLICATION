@@ -123,11 +123,24 @@ public class DashboardActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
 
+        //This loop adds dates into an array
+        String[] Calendar_Income=new String[Income_size];
+        int m=0;
+        for (int i=4; i<Income_List.size(); i+=7){
+            Calendar_Income[m]=String.valueOf(Income_List.get(i));
+            m++;
+
+        }
+        //the values from the calendar array can be used to add calendar events to the calaendarview
+
+
 
 
         List Expense_List=db.getExpenseByUser(Current_user);
         int Exp_size=Expense_List.size()/7;
         String[] EXP_names=new String[Exp_size];
+
+
 
         int k=0;
         for (int i=3; i<Expense_List.size(); i+=7){
@@ -143,10 +156,13 @@ public class DashboardActivity extends AppCompatActivity {
         // Assign adapter to ListView
         listView2.setAdapter(adapter2);
 
-        //getting all the dates into one list
-        //getting all the expense names into one lise
-        String[] dates=new String[Expense_List.size()/7];
-        dates[0]=String.valueOf(Expense_List.get(3));
+        String[] Calendar_Expense=new String[Exp_size];
+        int n=0;
+        for (int i=4; i<Expense_List.size(); i+=7){
+            Calendar_Expense[n]=String.valueOf(Expense_List.get(i));
+            n++;
+
+        }
 
 
 
