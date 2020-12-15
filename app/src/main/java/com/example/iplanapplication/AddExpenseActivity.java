@@ -1,5 +1,6 @@
 package com.example.iplanapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -83,7 +84,9 @@ public class AddExpenseActivity extends AppCompatActivity {
 */
 
                         db.writeExpenseToDB(User, expenseName,expenseAmount,dateString,expense_menu_ans);
-
+                        Intent i = new Intent(AddExpenseActivity.this, HomeActivity.class);
+                        i.putExtra("key",User);
+                        startActivity(i);
 
 
 

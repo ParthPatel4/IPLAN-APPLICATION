@@ -6,6 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".AddExpenseActivity">
 
+
+    <TextView
+        android:id="@+id/header"
+
+        android:layout_width="192dp"
+        android:layout_height="36dp"
+
+        android:autofillHints=""
+        android:ems="10"
+
+        android:text="Add Expense"
+        android:textSize="24sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.004" />
+
     <Spinner
         android:id="@+id/expense_menu"
         android:layout_width="322dp"
@@ -14,10 +34,10 @@
         android:entries="@array/expense_type_array"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.00"
+        app:layout_constraintVertical_bias="0.072"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -33,7 +53,7 @@
         app:layout_constraintHorizontal_bias="0.689"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099" />
+        app:layout_constraintVertical_bias="0.16" />
 
     <EditText
         android:id="@+id/expense_amount"
@@ -47,7 +67,7 @@
         app:layout_constraintHorizontal_bias="0.689"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203" />
+        app:layout_constraintVertical_bias="0.244" />
 
     <DatePicker
         android:id="@+id/expense_date"
@@ -60,7 +80,7 @@
         app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.46" />
+        app:layout_constraintVertical_bias="0.485" />
 
     <Button
         android:id="@+id/expense_save"
@@ -71,7 +91,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.676" />
+        app:layout_constraintVertical_bias="0.655" />
 
     <CheckBox
         android:id="@+id/expense_recurrence"
@@ -80,9 +100,9 @@
         android:text="This is a recurring charge"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302" />
+        app:layout_constraintVertical_bias="0.335" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

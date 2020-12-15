@@ -198,25 +198,28 @@ public class SQLite_DB extends SQLiteOpenHelper {
         String selectQuery = "SELECT  * FROM " + USER_TABLE+" ";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
-        // looping through all rows and adding to list
-        if (cursor.moveToFirst()) {
-            do {
-                int userID=cursor.getInt(0);
-                String users=cursor.getString(1);
-                String expense=cursor.getString(2);
-                String income=cursor.getString(3);
-                System.out.println("CONTENT OF TABLE USER IS ");
-                System.out.println(users+"ID IS "+userID);
-                System.out.println(expense+" total expense is");
-                System.out.println(income+ " total income is ");
-                users_table_content.add(userID);
-                users_table_content.add(users);
-                users_table_content.add(expense);
-                users_table_content.add(income);
-            } while (cursor.moveToNext());
-        }
-        // return users list
-        return users_table_content;
+
+
+            // looping through all rows and adding to list
+            if (cursor.moveToFirst()) {
+                do {
+                    int userID = cursor.getInt(0);
+                    String users = cursor.getString(1);
+                    String expense = cursor.getString(2);
+                    String income = cursor.getString(3);
+                    System.out.println("CONTENT OF TABLE USER IS ");
+                    System.out.println(users + "ID IS " + userID);
+                    System.out.println(expense + " total expense is");
+                    System.out.println(income + " total income is ");
+                    users_table_content.add(userID);
+                    users_table_content.add(users);
+                    users_table_content.add(expense);
+                    users_table_content.add(income);
+                } while (cursor.moveToNext());
+            }
+            // return users list
+            return users_table_content;
+
     }
 
     // Getting All Expenses
@@ -327,6 +330,9 @@ public class SQLite_DB extends SQLiteOpenHelper {
         List UserExpenses = new ArrayList();
         System.out.println("You are in getExpense By User in SQLITEDB LINE 319");
         Cursor cursor = db.rawQuery("SELECT * FROM " + EXP_TABLE+" WHERE "+USERNAME+"=?",new String[]{Username});
+
+
+
         if(cursor.moveToFirst()){
             do{
                 int user_ID=cursor.getInt(0); String user_name=cursor.getString(1);
@@ -339,6 +345,7 @@ public class SQLite_DB extends SQLiteOpenHelper {
             }
             while(cursor.moveToNext());
         }
+
         System.out.println(Arrays.toString(UserExpenses.toArray()));
         return UserExpenses;
     }

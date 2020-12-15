@@ -96,6 +96,9 @@ public class AddIncomeActivity extends AppCompatActivity {
 */
 
                         db.writeIncomeToDB(User, incomeName, incomeAmount,dateString);
+                        Intent i = new Intent(AddIncomeActivity.this, HomeActivity.class);
+                        i.putExtra("key",User);
+                        startActivity(i);
 
 
                     }

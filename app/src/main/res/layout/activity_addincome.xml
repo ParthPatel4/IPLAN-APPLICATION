@@ -7,6 +7,24 @@
     tools:context=".AddIncomeActivity">
 
 
+    <TextView
+        android:id="@+id/header"
+
+        android:layout_width="192dp"
+        android:layout_height="36dp"
+
+        android:autofillHints=""
+        android:ems="10"
+
+        android:text="Add Income"
+        android:textSize="24sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.004" />
 
     <EditText
         android:id="@+id/income_name"
