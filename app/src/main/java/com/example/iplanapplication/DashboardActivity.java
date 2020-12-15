@@ -96,10 +96,18 @@ public class DashboardActivity extends AppCompatActivity {
             }
         }, 1000, 50);
 
+        //retrieving list with all the incomes including the name, date, type and etc
+        //SQLiteDB contains method getIncomeByUser
         List Income_List=db.getIncomeByUser(Current_user);
+        //Size variable required to iterate throughh the array and retrievee only the income name
         int Income_size=Income_List.size()/6;
+        //this array will hold the string value of the name of the income
         String[] Income_names=new String[Income_size];
 
+        //this loop iterates through the List and populates the income name array
+
+        //the loops starts with the first income at index 2
+        //it increments by 6 becasue every 6th element is the income name
         int j=0;
         for (int i=2; i<Income_List.size(); i+=6){
             Income_names[j]=String.valueOf(Income_List.get(i));
@@ -107,11 +115,11 @@ public class DashboardActivity extends AppCompatActivity {
 
         }
         System.out.println("the string array contains "+Income_names[0]+"  "+Income_names[1]);
+        //This assaigns the string to the adapter so that the listview can retreive values
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, Income_names);
 
-
-        // Assign adapter to ListView
+        // this assigns the adapter and thus displays the items in the layout view
         listView.setAdapter(adapter);
 
 
@@ -122,7 +130,7 @@ public class DashboardActivity extends AppCompatActivity {
         String[] EXP_names=new String[Exp_size];
 
         int k=0;
-        for (int i=2; i<Expense_List.size(); i+=7){
+        for (int i=3; i<Expense_List.size(); i+=7){
             EXP_names[k]=String.valueOf(Expense_List.get(i));
             k++;
 
@@ -134,6 +142,15 @@ public class DashboardActivity extends AppCompatActivity {
 
         // Assign adapter to ListView
         listView2.setAdapter(adapter2);
+
+        //getting all the dates into one list
+        //getting all the expense names into one lise
+        String[] dates=new String[Expense_List.size()/7];
+        dates[0]=String.valueOf(Expense_List.get(3));
+
+
+
+
 
 
 

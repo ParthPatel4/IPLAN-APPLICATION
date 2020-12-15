@@ -41,17 +41,21 @@
                 android:layout_margin="10dp"
                 android:textColorHint="#FFFFFFFF"
                 android:hint="Password"
+                android:inputType="textPassword"
+
                 android:id="@+id/Password_Login"
                 />
+
             <Button
+                android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Log In"
-                android:textColorHint="#FFFFFFFF"
-                android:id="@+id/btn_login"
                 android:textAppearance="?android:textAppearanceMedium"
-                />
+                android:textColor="#000000"
+                android:textColorHint="#FFFFFFFF"
+                app:backgroundTint="#FFFFFF" />
 
             <TextView
                 android:layout_width="match_parent"

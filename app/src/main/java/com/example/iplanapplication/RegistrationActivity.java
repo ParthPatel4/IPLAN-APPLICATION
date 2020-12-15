@@ -77,7 +77,9 @@ public class RegistrationActivity extends AppCompatActivity {
 
                             Toast.makeText(getApplicationContext(), "Registration Complete!", Toast.LENGTH_SHORT).show();
 
-                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                            Intent i = new Intent(RegistrationActivity.this, AddIncomeActivity.class);
+                            i.putExtra("key",email);
+                            startActivity(i);
                         } else {
                             mDialog.dismiss();
                             Toast.makeText(getApplicationContext(), "Registration Failed!", Toast.LENGTH_SHORT).show();

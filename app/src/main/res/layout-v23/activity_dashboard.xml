@@ -15,26 +15,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+
+
+            >
 
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="275dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginRight="0dp"
+
+                android:layout_marginLeft="4dp"
+
+
+                android:layout_marginRight="4dp"
                 card_view:cardCornerRadius="15dp"
                 card_view:contentPadding="5dp"
+                android:layout_marginTop="10dp"
+
+
 
                 >
 
@@ -108,7 +111,7 @@
 
                     <TextView
                         android:id="@+id/total_income"
-                        android:layout_width="61dp"
+                        android:layout_width="92dp"
                         android:layout_height="wrap_content"
 
                         android:layout_alignParentStart="true"
@@ -116,11 +119,11 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_marginStart="62dp"
-                        android:layout_marginLeft="62dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="288dp"
-                        android:layout_marginRight="288dp"
+                        android:layout_marginStart="37dp"
+                        android:layout_marginLeft="37dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="264dp"
+                        android:layout_marginRight="264dp"
                         android:ems="10"
                         android:text="$0.00"
                         android:textColor="#0671AC"
@@ -138,11 +141,11 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_marginStart="289dp"
-                        android:layout_marginLeft="289dp"
-                        android:layout_marginTop="11dp"
-                        android:layout_marginEnd="9dp"
-                        android:layout_marginRight="9dp"
+                        android:layout_marginStart="296dp"
+                        android:layout_marginLeft="296dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginRight="2dp"
                         android:ems="10"
                         android:text="$0.00"
                         android:textColor="#0671ac"
@@ -153,16 +156,16 @@
 
                     <TextView
                         android:id="@+id/TotalExpenditure"
-                        android:layout_width="118dp"
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_marginStart="166dp"
-                        android:layout_marginLeft="166dp"
-                        android:layout_marginTop="176dp"
+                        android:layout_marginStart="156dp"
+                        android:layout_marginLeft="156dp"
+                        android:layout_marginTop="162dp"
                         android:layout_marginEnd="127dp"
                         android:layout_marginRight="127dp"
                         android:ems="10"
@@ -173,8 +176,6 @@
                         tools:layout_editor_absoluteY="183dp" />
 
 
-
-
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -183,36 +184,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="6dp"
-                android:layout_marginLeft="6dp"
-                android:layout_marginTop="270dp"
-                android:layout_marginEnd="7dp"
-                android:layout_marginRight="7dp">
+                android:layout_marginLeft="4dp"
+
+
+                android:layout_marginRight="4dp"
+                card_view:cardCornerRadius="15dp"
+                card_view:contentPadding="5dp"
+                android:layout_marginTop="10dp"
+
+               >
 
                 <!-- Main Content View -->
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
 
                     <TextView
                         android:id="@+id/textView5"
                         android:layout_width="106dp"
                         android:layout_height="36dp"
 
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginLeft="0dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="292dp"
+
+
+                        android:layout_marginTop="2dp"
+
                         android:layout_marginRight="292dp"
                         android:text="Income"
                         android:textSize="24sp" />
@@ -220,18 +217,16 @@
                     <ListView
                         android:id="@+id/income_list"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
+                        android:layout_height="68dp"
+
                         android:layout_marginStart="4dp"
 
                         android:layout_marginLeft="4dp"
-                        android:layout_marginTop="41dp"
-                        android:layout_marginBottom="171dp" />
+
+                        android:layout_marginBottom="10dp" />
 
 
-                </RelativeLayout>
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -239,35 +234,31 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
 
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
 
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="493dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginRight="4dp"
+                card_view:cardCornerRadius="15dp"
+                card_view:contentPadding="5dp"
+                android:layout_marginTop="10dp"
+
+              >
 
                 <!-- Main Content View -->
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp">
+                    android:layout_height="200dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textView4"
                         android:layout_width="106dp"
                         android:layout_height="36dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginStart="3dp"
+
+
                         android:layout_marginLeft="3dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginBottom="385dp"
+                        android:layout_marginTop="2dp"
+
                         android:scrollbarAlwaysDrawHorizontalTrack="false"
                         android:scrollbarAlwaysDrawVerticalTrack="false"
                         android:text="Expense"
@@ -278,20 +269,11 @@
                         android:id="@+id/expense_list"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
 
-                        android:layout_marginStart="0dp"
-                        android:layout_marginLeft="0dp"
-                        android:layout_marginTop="46dp"
-                        android:layout_marginEnd="0dp"
-                        android:layout_marginRight="0dp"
-                        android:layout_marginBottom="154dp" />
-                </RelativeLayout>
+
+                        />
+                </LinearLayout>
 
 
             </androidx.cardview.widget.CardView>
@@ -302,7 +284,7 @@
 
 
 
-        </RelativeLayout>
+        </LinearLayout>
     </ScrollView>
 </RelativeLayout>
 
